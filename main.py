@@ -1,6 +1,25 @@
+import random
+
 MAX_LINES = 3  # Define the maximum number of lines
 MAX_BET = 100
 MIN_BET = 1
+
+ROW = 3
+COLS = 3
+
+symbol_count = {
+    "A": 2,
+    "B": 4,
+    "C": 6,
+    "D": 8
+}
+
+def get_slot_machine_spin(rows, cols, symbols):
+    all_symbols = []
+    for symbol, symbol_count in symbols.items():
+        for _ in range(symbol_count):
+            all_symbols.append(symbol)
+
 
 def deposit():
     while True:
@@ -59,7 +78,7 @@ def main():
         else:
             break
 
-        
+
     print(f"You are betting ${bet} on {lines} lines. Your total bet is equal to: ${total_bet}")
     
     
